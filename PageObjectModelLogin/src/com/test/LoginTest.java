@@ -39,7 +39,7 @@ public class LoginTest {
 		driver = new ChromeDriver();
 		driver.get(prop.getProperty("url"));
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Integer.parseInt("wait"), TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Integer.parseInt(prop.getProperty("wait")), TimeUnit.SECONDS);
 		lp = new LoginPage(driver);
 		System.out.println("LoginTest inialize");
 	}
@@ -91,6 +91,5 @@ public class LoginTest {
 		lp.navigationBetDashboardAndLogin();
 		Assert.assertTrue(lp.navigateToLoginFromDashboard());
 	}
-
 
 }
