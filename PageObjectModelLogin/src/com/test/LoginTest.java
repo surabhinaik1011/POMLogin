@@ -39,6 +39,7 @@ public class LoginTest {
 		driver = new ChromeDriver();
 		driver.get(prop.getProperty("url"));
 		driver.manage().window().maximize();
+		// wait is taken from property file
 		driver.manage().timeouts().implicitlyWait(Integer.parseInt(prop.getProperty("wait")), TimeUnit.SECONDS);
 		lp = new LoginPage(driver);
 		System.out.println("LoginTest inialize");
